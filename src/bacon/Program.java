@@ -30,7 +30,7 @@ public class Program {
                     System.out.println("Oops! That person has no connection to Kevin Bacon, please try another name.");
                 }else {
                     int steps = path.size()/2;
-                    System.out.printf("\"%s\" is %d steps away from Kevin B. The path is %s.\n", name, steps, path);
+                    System.out.printf("\"%s\" is %d steps away from Kevin B. The path is %s.\n", name, steps, path.toString().replaceAll("\\[|\\]", ""));
                 }
             }catch (IllegalArgumentException e){
                 System.out.println(e.getMessage());
