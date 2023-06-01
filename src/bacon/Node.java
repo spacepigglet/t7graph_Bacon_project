@@ -4,20 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 public class Node {
     private final String name;
-    //private boolean visited;
     private List<Node> connections;
 
     public Node(String name) {
         this.name = name;
         connections = new ArrayList<>();
     }
-
-    /*public void visited(boolean v){
-        visited = v;
-    }*/
 
     public void addConnection(Node node){
         connections.add(node);
@@ -37,14 +31,11 @@ public class Node {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Node node = (Node) o;
-        return name.equals(node.name) ; //&& connections.equals(node.connections)
+        return name.equals(node.name) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name); //,connections
-    }
+        return Objects.hash(name); }
 
-    /*public boolean isVisited() {return visited;
-    }*/
 }

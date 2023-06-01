@@ -1,6 +1,4 @@
 package bacon;
-
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +13,6 @@ public class Program {
         return name;
     }
 
-
     private void run(String fileName){
         String name = "";
         baconGraph = new BaconGraph(fileName);
@@ -24,7 +21,7 @@ public class Program {
             if(name.equalsIgnoreCase("q") || name.equalsIgnoreCase("quit")) {
                 break;
             }
-            try{
+            try {
                 List<Node> path = baconGraph.breadthFirstSearch(name);
                 if (path.isEmpty()){
                     System.out.println("Oops! That person has no connection to Kevin Bacon, please try another name.");
@@ -32,23 +29,14 @@ public class Program {
                     int steps = path.size()/2;
                     System.out.printf("\"%s\" is %d steps away from Kevin B. The path is %s.\n", name, steps, path.toString().replaceAll("\\[|\\]", ""));
                 }
-            }catch (IllegalArgumentException e){
+            } catch (IllegalArgumentException e){
                 System.out.println(e.getMessage());
             }
-
         }
-
     }
-
-    /*private void print(){
-        BaconGraph baconGraph = new BaconGraph("testData.txt");
-        baconGraph.printNameToNode();
-    }*/
-
 
     public static void main(String[] args) {
         Program p = new Program();
-        //p.print();
         p.run("moviedata.txt");
     }
 }
