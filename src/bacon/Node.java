@@ -6,24 +6,28 @@ import java.util.Objects;
 
 public class Node {
     private final String name;
-    private List<Node> connections;
+    private final List<Node> connections;
 
     public Node(String name) {
         this.name = name;
         connections = new ArrayList<>();
     }
 
-    public void addConnection(Node node){
+    public void addConnection(Node node) {
         connections.add(node);
     }
 
-    public String getName(){return name;}
+    public String getName() {
+        return name;
+    }
 
-    public List<Node> getConnections(){return connections;}
+    public List<Node> getConnections() {
+        return connections;
+    }
 
     @Override
     public String toString() {
-        return  name ;
+        return name;
     }
 
     @Override
@@ -31,11 +35,12 @@ public class Node {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Node node = (Node) o;
-        return name.equals(node.name) ;
+        return name.equals(node.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name); }
+        return Objects.hash(name);
+    }
 
 }
