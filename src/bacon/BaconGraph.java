@@ -17,7 +17,7 @@ public class BaconGraph {
         read(fileName);
     }
 
-    public void read(String fileName)  {
+    private void read(String fileName)  {
         Map<String, Node> movieToNode = new HashMap<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
